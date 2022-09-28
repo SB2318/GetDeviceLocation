@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         checkLocationIsEnableOrNot(); // This will redirect to us to the location settings
 
-        getUserRole();
+        getUserLocation();
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
     }
 
-    private void getUserRole() {
+    private void getUserLocation() {
 
         LocationManager locationManager;
         try {
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                     ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                             != PackageManager.PERMISSION_GRANTED) {
 
-                return;
+                grantPermission();
             }
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
