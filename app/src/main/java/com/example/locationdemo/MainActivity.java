@@ -23,6 +23,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.List;
@@ -143,6 +144,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             String address= addresses.get(0).getAddressLine(0);
 
             Log.d("TAG",city+" ,"+state);
+
+            TextView text= findViewById(R.id.textView);
+
+            text.setText(city+" ,"+state);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
