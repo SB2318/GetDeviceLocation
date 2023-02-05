@@ -15,5 +15,8 @@
          alt="GitHub pull requests"></a>
 </p>
 
+## About:
+--------
+**LocationDemo** is a Helper Project that helps to get you the current location of your android device. 
 
 
